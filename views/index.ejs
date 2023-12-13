@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +11,7 @@
 <body>
 <header>
     <h1 >Welcome to my Book Shelf</h1>
+    <!-- Small navbar to select the order of sorting the books -->
     <nav>
         <form action="/sort" method="post">
             <label for="sort">Sort by</label>
@@ -27,10 +27,12 @@
 </header>
 <main>
     <div class="container">
+        <!-- An anchor to add new book -->
         <div class="new">
             <a href="/new">Create New</a>
         </div>
         <article>
+            <!-- Displaying all books -->
         <% books.forEach((book) => { %>
             <section id="book<%= book.id %>">
                     <img src="https://covers.openlibrary.org/b/isbn/<%=book.isbn%>-L.jpg" alt="<%=book.name%>-cover">
@@ -42,10 +44,12 @@
                     <p>Last Updated: <%= book.updated_time.toLocaleDateString() %></p>
                 </div>
                 <div class="btn">
+                    <!-- Delete and Edit buttons -->
                     <a class="edit-btn" href="/edit/<%= book.id %>">Edit</a>
                     <a class="delete-btn" href="/delete/<%= book.id %>">Delete</a>
                 </div> 
-                <p class="book-note"><%= book.note.substring(0, 200) %> ... <a href="/book/<%= book.id%>">Read more</a></p>
+                <!-- Book notes and a link to view full details -->
+                <p class="book-note"><%= book.note.substring(0, 200) %>... <a href="/book/<%= book.id%>">Read more</a></p>
             </section>
         <%  }) %>
         </article>

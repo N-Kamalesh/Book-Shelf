@@ -14,11 +14,13 @@
     <header>
         <h1><%= locals.book ? "Edit the book from your book shelf" : "Add a new book to your book shelf" %></h1>
     </header>
+    <!-- Displaying the error message if the user didn't fill all the fields -->
     <% if(locals.error) { %>
         <div class="error">
             <%= error %>
         </div>
     <% } %>
+    <!-- Checking whether to display ADD/EDIT page by checking whether locals.book exits -->
     <form class="edit-form" action="/<%= locals.book ? "update" : "add" %>" method="post">
         <input type="hidden" name="id" value="<%= locals.book ? book.id : ""%>">
         <label for="name">Book Name : </label>

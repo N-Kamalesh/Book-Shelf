@@ -12,15 +12,16 @@
     </style>
 </head>
 <body>
-        <article id="book<%= book.id %>">
-            <img src="https://covers.openlibrary.org/b/isbn/<%=book.isbn%>-L.jpg" alt="<%=book.name%>-cover">
-            <h1><%= book.name %></h1>
-            <h2>Written by <%= book.author %></h2>
-            <p>Rating: ⭐ <%=book.rating%> / 5 </p>
-            <p>ISBN : <%= book.isbn %></p>
-            <p>Last Updated Time : <%= book.updated_time.toLocaleString() %></p>
-            <p class="bookNote"><%= book.note %></p>
-        </article>
+    <!-- Displaying all the details of the book -->
+    <article id="book<%= book.id %>">
+        <img src="https://covers.openlibrary.org/b/isbn/<%=book.isbn%>-L.jpg" alt="<%=book.name%>-cover">
+        <h1><%= book.name %></h1>
+        <h2>Written by <%= book.author %></h2>
+        <p>Rating: ⭐ <%=book.rating%> / 5 </p>
+        <p>ISBN : <%= book.isbn %></p>
+        <p>Last Updated Time : <%= book.updated_time.toLocaleString() %></p>
+        <p class="bookNote"><%= book.note %></p>
+    </article>
 </body>
 <footer>
     Copyright © <%= new Date().getFullYear() %> Kamalesh TVT

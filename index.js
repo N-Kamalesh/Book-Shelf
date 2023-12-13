@@ -1,3 +1,4 @@
+//Importing all required packages
 import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
@@ -5,8 +6,8 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import pg from 'pg';
 import 'dotenv/config';
-import { error } from 'console';
 
+//Creating necessary variables
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
@@ -16,6 +17,8 @@ let books = [];
 let sort = "id";
 let order = "DESC"
 let errorMsg = ""; 
+
+//Connecting to the database
 const db = new pg.Client({ 
     host: PGHOST,
     database: PGDATABASE,
@@ -24,27 +27,31 @@ const db = new pg.Client({
     port: 5432,
     ssl: true 
 });
-
 await db.connect();
 
+//Using necessary middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));  
  
+//Function to get the book list from the database
 async function getBooks() {
     try {
         console.log(sort);
         const response = await db.query(`SELECT * FROM book_list ORDER BY ${sort} ${order}`); 
+        errorMsg = "";
         books = response.rows;
     } catch (error) {
         console.log(error);
     }    
 }
  
+//Home page 
 app.get("/", async (req, res) => {
     await getBooks();
     res.render(path.join(__dirname, "views/index.ejs"), { books});
 })
 
+//Sorting the book list based on the user's option
 app.post("/sort", (req, res) => {
     const waytoSort = req.body.sort;
     switch (waytoSort) {
@@ -66,10 +73,12 @@ app.post("/sort", (req, res) => {
     res.redirect("/");
 })
 
+//Page to add new book
 app.get("/new", async (req, res) => {
     res.render(path.join(__dirname, "views/new.ejs"), { error: errorMsg });
 })
 
+//Page to edit an exisiting book
 app.get("/edit/:id", async (req, res) => {
     const editId = parseInt(req.params.id);
     try {
@@ -81,6 +90,7 @@ app.get("/edit/:id", async (req, res) => {
     } 
 }) 
 
+//Page that shows full notes of the book
 app.get("/book/:id", async (req, res) => {
     const bookId = parseInt(req.params.id);
     try {
@@ -93,6 +103,7 @@ app.get("/book/:id", async (req, res) => {
     } 
 })
 
+//Delete a book from the database
 app.get(`/delete/:id`, async (req, res) => {
     const id = req.params.id;
     try {
@@ -104,6 +115,7 @@ app.get(`/delete/:id`, async (req, res) => {
     }
 })  
 
+//Add a new book to the database
 app.post("/add", async (req, res) => {
     const name = req.body.name.trim();
     const author = req.body.author.trim();
@@ -127,6 +139,7 @@ app.post("/add", async (req, res) => {
     
 })
 
+//Update a book in the database
 app.post("/update", async (req, res) => {
     const name = req.body.name.trim();
     const id = parseInt(req.body.id)
@@ -151,6 +164,7 @@ app.post("/update", async (req, res) => {
     
 })
 
+//Setting up server to listen on the specified port
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 })

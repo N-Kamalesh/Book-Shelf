@@ -99,6 +99,10 @@ section h3{
     clear: left;
     margin-bottom: 10px;
 }
+.book-note a{
+    text-decoration: none;
+    color: #7B66FF;
+}
 img {
     float: left;
     margin-right: 15px;
@@ -147,6 +151,8 @@ footer{
     background-color: #96EFFF;
     width: 100%;
 }
+
+/***************** STYLING FOR MOBILES *********************/
 
 @media (max-width:600px){
     .book-details{
