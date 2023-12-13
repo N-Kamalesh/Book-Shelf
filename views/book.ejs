@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/book.png">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/book.css">
+    <title><%= book.name %></title>
+    <style>
+    </style>
+</head>
+<body>
+        <article id="book<%= book.id %>">
+            <img src="https://covers.openlibrary.org/b/isbn/<%=book.isbn%>-L.jpg" alt="<%=book.name%>-cover">
+            <h1><%= book.name %></h1>
+            <h2>Written by <%= book.author %></h2>
+            <p>Rating: ⭐ <%=book.rating%> / 5 </p>
+            <p>ISBN : <%= book.isbn %></p>
+            <p>Last Updated Time : <%= book.updated_time.toLocaleString() %></p>
+            <p class="bookNote"><%= book.note %></p>
+        </article>
+</body>
+<footer>
+    Copyright © <%= new Date().getFullYear() %> Kamalesh TVT
+</footer>
+
+</html>

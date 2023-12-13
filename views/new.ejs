@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/book.png">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/new.css">
+    <title>Book Shelf</title>
+</head>
+
+<body>
+    <header>
+        <h1><%= locals.book ? "Edit the book from your book shelf" : "Add a new book to your book shelf" %></h1>
+    </header>
+    <% if(locals.error) { %>
+        <div class="error">
+            <%= error %>
+        </div>
+    <% } %>
+    <form class="edit-form" action="/<%= locals.book ? "update" : "add" %>" method="post">
+        <input type="hidden" name="id" value="<%= locals.book ? book.id : ""%>">
+        <label for="name">Book Name : </label>
+        <input type="text" name="name" id="name" value="<%= locals.book ? book.name : "" %>" required placeholder="Enter the name of the Book" autocomplete="off">
+        <label for="author">Author Name : </label>
+        <input type="text" name="author" id="author" value="<%= locals.book ? book.author : ""  %>" required placeholder="Enter the name of the Author" autocomplete="off">
+        <label for="note">Book notes : </label>
+        <textarea name="note" id="note" required placeholder="Enter your thoughts on the book" cols="30" rows="10"><%= locals.book ? book.note : "" %></textarea>
+        <label for="rating">Book rating (Out of 5): </label>
+        <input type="number" name="rating" id="rating" min="0.1" step="0.1" max="5" value=<%= locals.book ? book.rating : 0.1 %> required >
+        <label for="isbn">Book ISBN number : </label>
+        <input type="text" name="isbn" id="isbn" value="<%= locals.book ? book.isbn : "" %>" required
+            placeholder="Enter the correct ISBN number of the book" autocomplete="off">
+        <button type="submit"><%= locals.book ? "Edit" : "Add" %></button>
+    </form>
+</body>
+<footer>
+    Copyright © <%= new Date().getFullYear() %> Kamalesh TVT
+</footer>
+
+</html>
