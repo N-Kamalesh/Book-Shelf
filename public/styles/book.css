@@ -43,3 +43,17 @@ footer {
     background-color: #96EFFF;
     width: 100%;
 }
+
+@media (max-width:600px){
+    img{
+        float:none;
+        width:80%;
+        height: auto;
+        margin: 20px auto;
+    }
+    h1,h2{
+        padding: 10px 0;
+        text-align: center;
+        line-height: 1.2;
+    }
+}
