@@ -1,75 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital@1&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital@1&family=Poppins&display=swap");
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #7B66FF;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: #7b66ff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
-header,footer{
-    width: 100%;
-    text-align: center;
-    background-color: #96EFFF;
+header,
+footer {
+  width: 100%;
+  text-align: center;
+  background-color: #96efff;
 }
-header{
-    padding: 20px;
-    margin-bottom: auto;
+header {
+  padding: 20px;
+  margin-bottom: auto;
 }
-footer{
-    padding: 10px;
-    margin-top: auto;
+footer {
+  padding: 10px;
+  margin-top: auto;
 }
 .error {
-    background-color: red;
-    width: 90%;
-    color: #fff;
-    border-radius: 12px;
-    max-width: 800px;
-    padding: 20px;
-    text-align: center;
-    margin:10px auto 0;
+  background-color: red;
+  width: 90%;
+  color: #fff;
+  border-radius: 12px;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px auto 0;
 }
-form{
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    max-width: 800px;
-    gap: 10px;
-    background-color: #5FBDFF;
-    padding: 20px;
-    border: 10px solid white;
-    border-radius: 12px;
-    box-shadow: 3px 3px 6px #000;
+form {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 800px;
+  gap: 10px;
+  background-color: #5fbdff;
+  padding: 20px;
+  border: 10px solid white;
+  border-radius: 12px;
+  box-shadow: 3px 3px 6px #000;
 }
-form label{
-    font-weight: 900;
-    font-size: 1.2rem;
+form label {
+  font-weight: 900;
+  font-size: 1.2rem;
 }
-input, textarea{
-    padding: 8px;
-    border-radius: 6px;
-    border: none;
+input,
+textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
 }
-input:focus, textarea:focus{
-    outline: none;
-    border:2px solid blue;
-    box-shadow: 2px 2px 2px #000;
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 2px solid blue;
+  box-shadow: 2px 2px 2px #000;
 }
-::placeholder{
-    color: blue;
-    opacity: 0.5;
+::placeholder {
+  color: blue;
+  opacity: 0.5;
 }
-button{
-    background-color: blue;
-    color: white;
-    padding: 8px;
-    border-radius: 6px;
-    cursor: pointer;
-    border: none;
+button {
+  background-color: blue;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
 }
-button:hover{
-    background-color: hsl(240, 100%, 30%);
+button:hover {
+  background-color: hsl(240, 100%, 30%);
 }
-

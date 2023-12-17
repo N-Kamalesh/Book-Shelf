@@ -1,59 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital@1&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital@1&family=Poppins&display=swap");
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #7B66FF;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: #7b66ff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
-article{
-    background-color: #5FBDFF;
-    width: 90%;
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-    line-height: 2;
-    box-shadow: 2px 2px 5px black;
-    border: 10px solid #ffffff;
-    border-radius: 28px;
+article {
+  background-color: #5fbdff;
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  line-height: 2;
+  box-shadow: 2px 2px 5px black;
+  border: 10px solid #ffffff;
+  border-radius: 28px;
 }
-article h1{
-    font-size: 2.5rem;
-    line-height: 1.2;
+article h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
 }
-img{
-    height: 400px;
-    float: left;
-    margin-right: 20px;
-    border: 5px solid #fff;
-    box-shadow: 2px 2px 5px black;
-    border-radius: 8px;
+img {
+  height: 400px;
+  float: left;
+  margin-right: 20px;
+  border: 5px solid #fff;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 8px;
 }
-p:last-child{
-    margin-top: 20px;
-    font-family: 'Gentium Book Plus', serif;
-    font-size: 1.2rem;
-    text-align: justify;
-    white-space: pre-wrap;
+p:last-child {
+  margin-top: 20px;
+  font-family: "Gentium Book Plus", serif;
+  font-size: 1.2rem;
+  text-align: justify;
+  white-space: pre-wrap;
 }
 footer {
-    padding: 10px;
-    text-align: center;
-    margin-top: auto;
-    background-color: #96EFFF;
-    width: 100%;
+  padding: 10px;
+  text-align: center;
+  margin-top: auto;
+  background-color: #96efff;
+  width: 100%;
 }
 
-@media (max-width:600px){
-    img{
-        float:none;
-        width:80%;
-        height: auto;
-        margin: 20px auto;
-    }
-    h1,h2{
-        padding: 10px 0;
-        text-align: center;
-        line-height: 1.2;
-    }
+@media (max-width: 600px) {
+  img {
+    float: none;
+    width: 80%;
+    height: auto;
+    margin: 20px auto;
+  }
+  h1,
+  h2 {
+    padding: 10px 0;
+    text-align: center;
+    line-height: 1.2;
+  }
 }
